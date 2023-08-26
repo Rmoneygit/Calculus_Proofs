@@ -4,9 +4,16 @@
 \usepackage{gensymb}
 
 \begin{document}
-	\textbf{Theorem 1.4.3:} Let $f$ and $g$ be real-valued functions and $L$ and $M$ be real numbers. Suppose that
+	\textbf{Theorem 1.4.4:} Let $f$ and $g$ be real-valued functions and $L$ and $M$ be real numbers. Suppose that
 	$$\lim_{x \to a}{f(x)} = L \; \text{ and } \lim_{x \to a}{g(x)} = M$$
 	Then
 	$$\lim_{x \to a}[{f(x) - g(x)}] = L - M.$$
 	\textbf{Proof:}
+	\begin{align*}
+		\lim_{x \to a}[{f(x) - g(x)}] &= \lim_{x \to a}[{f(x) + (-1) * g(x)}] \\
+									  &= \lim_{x \to a}{f(x)} + \lim_{x \to a}{[(-1) * g(x)]} \tag{Theorem 1.4.1} \\
+									  &= L + \lim_{x \to a}{(-1)} * \lim_{x \to a}{g(x)} \tag{Theorem 1.4.2} \\
+									  &= L + (-1) * M \tag{Theorem 1.4.3} \\
+									  &= L - M.
+	\end{align*}
 \end{document}
