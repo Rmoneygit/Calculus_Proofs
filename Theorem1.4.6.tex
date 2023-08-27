@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{gensymb}
+
+\begin{document}
+	\textbf{Theorem 1.4.6:} Let $f$ be a real-valued function and $a$, $L$ be real numbers and $n > 0$ be an integer. Suppose
+	$$\lim_{x \to a}{f(x)} = L$$
+	Then
+	$$\lim_{x \to a}[{f(x)^n}] = L^n$$
+	\textbf{Proof:}
+	We will proceed by induction. \\\\
+	\textit{Step 1: Base case} \\
+	Let $n = 1.$ Then
+	\begin{align*}
+		\lim_{x \to a}[{f(x)^n}] &= \lim_{x \to a}[{f(x)^1}] \\
+		                         &= \lim_{x \to a}{f(x)} \\
+		                         &= L \\
+		                         &= L^1 \\
+		                         &= L^n.
+	\end{align*}
+	So the statement holds for the base case. \\\\
+	\textit{Step 2: Induction step} \\
+	Suppose $\lim_{x \to a}[{f(x)^n}] = L^n$. We then need to show that
+	$$\lim_{x \to a}[{f(x)^{n+1}}] = L^{n+1}$$
+	We have
+	\begin{align*}
+		\lim_{x \to a}[{f(x)^{n+1}}] &= \lim_{x \to a}[{f(x)^nf(x)}] \\
+		                             &= \lim_{x \to a}{f(x)^n} * \lim_{x \to a}{f(x)} \tag{Theorem 1.4.2} \\
+		                             &= L^n * L \\
+		                             &= L^{n+1}
+	\end{align*}
+	which is what we needed to show. \\\\
+	We have proven the base case and the induction step. Thus, by the principle of mathematical induction, the statement 
+	$$\lim_{x \to a}[{f(x)^n}] = L^n$$
+	holds for all positive integers $n$.
+\end{document}
