@@ -1,0 +1,77 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{gensymb}
+
+\begin{document}
+	\textbf{Theorem 1.4.5:} Let $f$ and $g$ be real-valued functions and $a$, $L$ and $M$ be real numbers with $M \neq 0$. Suppose that
+	$$\lim_{x \to a}{f(x)} = L \; \text{ and } \lim_{x \to a}{g(x)} = M$$
+	Then
+	$$\lim_{x \to a}{\frac{f(x)}{g(x)}} = \frac{L}{M}.$$
+	\textbf{Proof:}
+	To show this, let us first show that
+	$$\lim_{x \to a}{\frac{1}{g(x)}} = \frac{1}{M}$$
+	Let $\epsilon > 0$ be an arbitrary real number. We then need to show that there exists some real number $\delta > 0$ such that
+	$$0 < |x - a| < \delta \implies \left|\frac{1}{g(x)} - \frac{1}{M}\right| < \epsilon$$
+	\textit{Part 1: Choose a $\delta$:} \\
+	Note that
+	\begin{align*}
+		\left|\frac{1}{g(x)} - \frac{1}{M}\right| &= \left|\frac{1}{g(x)}\frac{M}{M} - \frac{1}{M}\frac{g(x)}{g(x)}\right| \tag{$M \neq 0 \implies g(x) \neq 0$} \\
+		                               &= \left|\frac{M - g(x)}{Mg(x)} \right| \\
+		                               &= \frac{|M - g(x)|}{|Mg(x)|}
+	\end{align*}
+	We need to choose a $\delta$ that makes this expression less than $\epsilon$. Since $\lim_{x \to a}{g(x)} = M$ and $\frac{|M|}{2} > 0$, then there exists a real number $\delta_{1} > 0$ such that
+	$$0 < |x - a| < \delta_{1} \implies |g(x) - M| < \frac{|M|}{2}$$
+	and therefore
+	\begin{align*}
+		|M| &= |M - g(x) + g(x)| \\
+		    &\leq |M - g(x)| + |g(x)| \tag{Triangle Ineq.} \\
+		    &= |-(-M + g(x))| + |g(x)| \\
+		    &= |g(x) - M| + |g(x)| \\
+		    &< \frac{|M|}{2} + |g(x)|
+	\end{align*}
+	which implies that
+	\begin{align*}
+		|M| &< \frac{|M|}{2} + |g(x)| \\
+		2|M| &< |M| + 2|g(x)| \\
+		|M| &< 2|g(x)| \\
+		\frac{|M|}{2} &< |g(x)|
+	\end{align*}
+	So we have shown that
+	\begin{align*}
+	0 < |x - a| < \delta_{1} &\implies \frac{|M|}{2} < |g(x)| \\\\
+	                         &\implies \frac{2}{|M|} > \frac{1}{|g(x)|}
+	\end{align*}
+	and so, for these values of $x$,
+	\begin{align*}
+		\frac{1}{|Mg(x)|} &= \frac{1}{|M||g(x)|} \\
+		                  &= \frac{1}{|M|} * \frac{1}{|g(x)|} \\
+		                  &< \frac{1}{|M|} * \frac{2}{|M|} \\
+		                  &< \frac{2}{|M||M|} \\
+		                  &< \frac{2}{|M^2|} \\
+		                  &< \frac{2}{M^2} \tag{$M^2 > 0$}
+	\end{align*}
+	Since $\lim_{x \to a}{g(x)} = M$ and $\frac{M^2}{2}\epsilon > 0$, then there exists a real number $\delta_{2} > 0$ such that
+$$0 < |x - a| < \delta_{2} \implies |g(x) - M| < \frac{M^2}{2}\epsilon$$
+This suggests we should choose $\delta = \min{(\delta_{1}, \delta_{2})}$. \\\\
+\textit{Step 2: Verify $\delta$ satisfies the condition} \\
+Suppose $0 < |x - a| < \delta$. This implies that
+$$0 < |x - a| < \delta_{1} \; \text{ and } \; 0 < |x - a| < \delta_{2}$$
+These imply that
+$$\frac{1}{|Mg(x)|} < \frac{2}{M^2} \; \text{ and } \; |g(x) - M| < \frac{M^2}{2}\epsilon$$
+Positive inequalities multiply, so we can multiply these to obtain
+\begin{align*}
+	\frac{|g(x) - M|}{|Mg(x)|} &< \frac{2}{M^2}\frac{M^2}{2}\epsilon \\
+	\left|\frac{1}{g(x)} - \frac{1}{M}\right| &< \epsilon
+\end{align*}
+which is what we needed to show. So $\delta$ exists and it satisfies the condition. Thus
+$$\lim_{x \to a}{\frac{1}{g(x)}} = \frac{1}{M}$$
+Finally, use this result and Theorem 1.4.2 to show
+\begin{align*}
+	\lim_{x \to a}{\frac{f(x)}{g(x)}} &= \lim_{x \to a}{\left[f(x)\frac{1}{g(x)}\right]} \\
+	                                  &= \lim_{x \to a}{f(x)} * \lim_{x \to a}{\frac{1}{g(x)}} \\
+	                                  &= L * \frac{1}{M} \\
+	                                  &= \frac{L}{M}
+\end{align*}
+which is what we wanted to show.
+\end{document}
