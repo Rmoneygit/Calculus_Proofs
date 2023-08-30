@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{gensymb}
+
+\begin{document}
+	\textbf{Theorem 1.4.9:} Let $f$ be a rational function and $b \in \mathbb{R}$ be a real number in the domain of $f$. Then
+	$$\lim_{x \to b}{f(x)} = f(b).$$
+	\textbf{Proof:}
+	Since $f$ is a rational function, then it is of the form
+	$$f(x) = \frac{p(x)}{q(x)}$$
+	where $p(x)$ and $q(x)$ are polynomials are $q$ is not the zero function. Thus
+	\begin{align*}
+		\lim_{x \to b}{f(x)} &= \lim_{x \to b}{\left[\frac{p(x)}{q(x)}\right]} \\
+							 &= \frac{\lim_{x \to b}{p(x)}}{{\lim_{x \to b}q(x)}} \tag{Theorem 1.4.5} \\
+							 &= \frac{p(b)}{q(b)} \tag{Theorem 1.4.8} \\
+							 &= f(b) \tag{$b$ is in domain}
+	\end{align*}
+	which is what we wanted to show.
+\end{document}
