@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{gensymb}
+
+\begin{document}
+	\textbf{Theorem 1.4.10:} For all real numbers $c$,
+	$$\lim_{\theta \to c}{\sin{(\theta)}} = \sin{(c)}$$
+	\textbf{Proof:}
+	Let $\epsilon > 0$ be an arbitrary real number. We need to show there exists some real number $\delta > 0$ such that
+	$$0 < |\theta - c| < \delta \implies |\sin{(\theta)} - \sin{(c)}| < \epsilon$$
+	\textit{Step 1: Find a $\delta$} \\
+	Note that
+	\begin{align*}
+		|\sin{(\theta)} - \sin{(c)}| &= \left|2\sin{\left(\frac{\theta - c}{2}\right)}\cos{\left(\frac{\theta + c}{2}\right)}\right| \tag{Sum to Product Formula} \\
+									 &= 2\left|\sin{\left(\frac{\theta - c}{2}\right)}\right|\left|\cos{\left(\frac{\theta + c}{2}\right)} \right|
+	\end{align*}
+	The range of $\cos{(x)}$ is $[-1, 1]$, so for all real numbers $|\cos{(x)}| \leq 1$. Therefore
+	$$\left|\cos{\left(\frac{\theta + c}{2}\right)} \right| \leq 1$$
+	so
+	\begin{align*}
+		2\left|\sin{\left(\frac{\theta - c}{2}\right)}\right|\left|\cos{\left(\frac{\theta + c}{2}\right)} \right| &\leq 2\left|\sin{\left(\frac{\theta - c}{2}\right)}\right| \\
+		|\sin{(\theta)} - \sin{(c)}| &\leq 2\left|\sin{\left(\frac{\theta - c}{2}\right)}\right|
+	\end{align*}
+\end{document}
