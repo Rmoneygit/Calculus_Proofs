@@ -22,10 +22,13 @@
 		\caption{Angle lies in Q1}
 	\end{figure} \\
 	By definition, $\sin{(\theta)} = |BC|$. By the definition of radian measure, the length of arc $AB = \theta$.  \\\\
-	Since $\triangle ABC$ is a right triangle, by Theorem 0.3 its hypotenuse is the longest side. Therefore
+	Since $\triangle ABC$ is a right triangle, the Pythagorean Theorem applies to it. So, since $|CA| > 0$, then
 	\begin{align*}
-		|BC| < |AB| \\
-		\sin{(\theta)} < |AB|
+		|CA|^2 &> 0 \\
+		|CA|^2 + |BC|^2 &> |BC|^2 \\
+		|AB|^2 &> |BC|^2 \tag{Pythag. Thrm.} \\
+		|AB| &> |BC| \tag{Length is positive} \\
+		|AB| &> \sin{(\theta)}
 	\end{align*}
 	From looking at the figure, it is geometrically intuitive \footnote{This is all we can say without having access to a more precise definition of arc length.} that the arc $AB$ is a longer length than the line segment $AB$. Therefore
 	\begin{align*}
