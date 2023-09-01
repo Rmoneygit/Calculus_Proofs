@@ -21,13 +21,17 @@
 		\includegraphics[width=\linewidth]{Trig_Figure.JPG}
 		\caption{Angle lies in Q1}
 	\end{figure} \\
-	By definition, $\sin{(\theta)} = |BC|$. By the definition of radian measure, the length of arc $AB = \theta$. From looking at the figure, it is geometrically intuitive \footnote{This is all we can say without having access to a more precise definition of arc length.} that the arc $AB$ is a longer length than the line segment $BC$.
-	
-	Therefore
+	By definition, $\sin{(\theta)} = |BC|$. By the definition of radian measure, the length of arc $AB = \theta$.  \\\\
+	Since $\triangle ABC$ is a right triangle, by Theorem 0.3 its hypotenuse is the longest side. Therefore
 	\begin{align*}
-		|BC| &< \text{arc } AB \\
-		\sin{(\theta)} &< \theta
+		|BC| < |AB| \\
+		\sin{(\theta)} < |AB|
 	\end{align*}
-	
-	The inequality holds in both cases, so it is true for all $\theta > 0$.
+	From looking at the figure, it is geometrically intuitive \footnote{This is all we can say without having access to a more precise definition of arc length.} that the arc $AB$ is a longer length than the line segment $AB$. Therefore
+	\begin{align*}
+		\sin{(\theta)} &< |AB| < \text{arc } AB \\
+		\sin{(\theta)} &< |AB| < \theta \\
+	\end{align*}
+	The inequality holds in both cases, so for all $\theta > 0$,
+	$$\sin{(\theta)} < \theta$$
 \end{document}
