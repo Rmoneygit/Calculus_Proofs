@@ -7,7 +7,7 @@
 	\textbf{Theorem 1.4.10:} For all real numbers $c$,
 	$$\lim_{\theta \to c}{\sin{(\theta)}} = \sin{(c)}$$
 	\textbf{Proof:}
-	Let $\epsilon > 0$ be an arbitrary real number. We need to show there exists some real number $\delta > 0$ such that
+	Let $\epsilon > 0$ be an arbitrary real number. Let $c$ be an arbitrary real number. We need to show there exists some real number $\delta > 0$ such that
 	$$0 < |\theta - c| < \delta \implies |\sin{(\theta)} - \sin{(c)}| < \epsilon$$
 	\textit{Step 1: Find a $\delta$} \\
 	Note that
@@ -22,4 +22,22 @@
 		2\left|\sin{\left(\frac{\theta - c}{2}\right)}\right|\left|\cos{\left(\frac{\theta + c}{2}\right)} \right| &\leq 2\left|\sin{\left(\frac{\theta - c}{2}\right)}\right| \\
 		|\sin{(\theta)} - \sin{(c)}| &\leq 2\left|\sin{\left(\frac{\theta - c}{2}\right)}\right|
 	\end{align*}
+	By Trig. Inequality 3,
+	\begin{align*}
+		2\left|\sin{\left(\frac{\theta - c}{2}\right)}\right| \leq 2\left|\frac{\theta - c}{2}\right|
+	\end{align*}
+	so
+	\begin{align*}
+		|\sin{(\theta)} - \sin{(c)}| &\leq 2\left|\frac{\theta - c}{2}\right| \\
+		|\sin{(\theta)} - \sin{(c)}| &\leq |\theta - c|
+	\end{align*}
+	This suggests we should choose $\delta = \epsilon$. \\\\
+	\textit{Step 2: Verify $\delta$ satisfies the condition}
+	Suppose $0 < |\theta - c| < \delta$. Then
+	\begin{align*}
+		|\sin{(\theta)} - \sin{(c)}| &\leq |\theta - c| < \delta = \epsilon \\
+		|\sin{(\theta)} - \sin{(c)}| &< \epsilon
+	\end{align*}
+	which is what we wanted to show. Thus by the definition of a limit, for all $c \in \mathbb{R}$,
+	$$\lim_{\theta \to c}{\sin{(\theta)}} = \sin{(c)}$$
 \end{document}
