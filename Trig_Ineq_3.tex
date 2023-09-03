@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{gensymb}
+
+\begin{document}
+	\textbf{Trig Inequality 3:} For all real numbers $\theta$,
+	$$|\sin{(\theta)}| \leq |\theta|$$
+	\textbf{Proof:} Let $\theta$ be an arbitrary real angle. \\
+	Case 1: Suppose $\theta = 0$. Then
+	\begin{align*}
+		\sin{(\theta)} &= 0
+	\end{align*}
+	So clearly
+	\begin{align*}
+		|0| &\leq |0| \\
+		|\sin{(\theta)}| &\leq |\theta|
+	\end{align*}
+	Case 2: Suppose $\theta \neq 0$. Then $|\theta| > 0$, so by Trig. Inequality 1,
+	\begin{align*}
+		\sin{(\theta)} < |\theta| \\
+		\sin{(\theta)} \leq |\theta|
+	\end{align*}
+	Also $-|\theta| < 0$, so by Trig Inequality 2,
+	\begin{align*}
+		-|\theta| < \sin{(\theta)} \\
+		-|\theta| \leq \sin{(\theta)}
+	\end{align*}
+	So we have
+	$$-|\theta| \leq \sin{(\theta)} \leq |\theta|$$
+	By Absolute Value Inequality 2, this implies that
+	$$|\sin{(\theta)}| \leq |\theta|$$
+\end{document}
