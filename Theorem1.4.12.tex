@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{gensymb}
+
+\begin{document}
+	\textbf{Theorem 1.4.12:} Let $a, b, c$ be real numbers and $f, g$ real-valued functions. Suppose that $a < c < b$ and $f(x) = g(x)$ for all $x$ in the interval $(a, b)$ except possibly at $c$. Then the limits $\lim_{x \to c}{f(x)}$ and $\lim_{x \to c}{g(x)}$ are either both defined or both undefined. If they are both defined, then they have the same value. \\
+	\textbf{Proof:} \\
+	Case 1: Suppose $\lim_{x \to c}{f(x)} = L$. We then need to show that $\lim_{x \to c}{g(x)} = L$.
+	To show this, we need to show that for all real numbers $\epsilon > 0$, there exists a real number $\delta > 0$ such that
+	$$0 < |x - c| < \delta \implies |g(x) - L| < \epsilon$$
+	\textit{Step 1: Find a $\delta$}
+	Since $\lim_{x \to c}{f(x)} = L$, then for all real numbers $\epsilon > 0$ there exists a real number $\delta_1 > 0$
+	$$0 < |x - c| < \delta_1 \implies |f(x) - L| < \epsilon$$
+	Let us choose $\delta = \delta_1$. \\\\
+	\textit{Step 2: Verify $\delta$ satisfies the condition} \\
+	Suppose $0 < |x - c| < \delta$. Then
+	$$0 < |x - c| < \delta_1$$
+	so
+	$$|f(x) - L| < \epsilon$$
+	By assumption, $0 < |x - c|$, so
+    \begin{align*}
+    	x - c &\neq 0 \\
+    	x &\neq c
+    \end{align*}
+    Since $x \neq c$, then
+    $$f(x) = g(x)$$
+    So we have
+    $$|g(x) - L| < \epsilon$$
+    which is what we needed to show. Thus
+    $$\lim_{x \to c}{g(x)} = L$$
+    Case 2: Suppose $\lim_{x \to c}{f(x)}$ does not exist. We then need to show that $\lim_{x \to c}{g(x)}$ does not exist. But this is the contrapositive of the statement in Case 1. Since we just proved Case 1, and it is logically equivalent to its contrapositive, that proves Case 2.
+\end{document}
