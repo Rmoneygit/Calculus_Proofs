@@ -1,0 +1,21 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{gensymb}
+
+\begin{document}
+	\textbf{Theorem 1.4.15:} Let $n > 0$ be a natural number. Let $f$ be the function given by 
+	$$f(x) = \sqrt[n]{x}.$$
+	Then
+	$$\lim_{x \to \xi}{f(x)} = f(\xi)$$
+	where $\xi$ is any real number (if $n$ is even, assume $\xi > 0$). \\\\
+	\textbf{Proof:}
+	Case 1: Suppose $n$ is even. Then we can assume that $\xi > 0$. Let $X, Y \in \mathbb{R}$ such that
+	$$0 < X < \xi < Y.$$
+	From Inequality Concerning Roots, we have
+	\begin{align*}
+		X\sqrt[n]{Y}|x - \xi| &\leq nXY|\sqrt[n]{x} - \sqrt[n]{\xi}| \leq Y\sqrt[n]{X}|x-\xi| \\
+		\frac{1}{nY}\sqrt[n]{Y}|x - \xi| &\leq |\sqrt[n]{x} - \sqrt[n]{\xi}| \leq \frac{1}{nX}\sqrt[n]{X}|x-\xi| \tag{Divide by nXY}
+	\end{align*}
+	Ou
+\end{document}

@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{gensymb}
+
+\begin{document}
+	\textbf{Example 1.4.4:} Find $\lim_{x \to 1}{g(x)}$ where
+	$$g(x) =
+	\begin{cases}
+		x + 1 & \text{if } x \neq 1\\
+		\pi & \text{if } x = 1
+	\end{cases}$$ \\
+	\textbf{Solution:} In this problem , $g(1)$ is defined, but we can't use the Direct Substitution Property because $g$ is not a polynomial, rational function, or trig function for which we have established that the property holds. However, since $g(x) = x + 1$ for all $x \neq 1$, we can say
+	\begin{align*}
+		\lim_{x \to 1}{g(x)} &= \lim_{x \to 1}{x + 1} \tag{Thrm 1.4.12} \\
+		                     &= (1) + 1 \tag{Thrm 1.4.8} \\
+		                     &= 2
+	\end{align*}
+	\textbf{Remark:} This problem demonstrates that the limit of a function does not depend on the function at the limiting value.
+\end{document}

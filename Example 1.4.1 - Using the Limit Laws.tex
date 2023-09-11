@@ -1,0 +1,17 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{gensymb}
+
+\begin{document}
+	\textbf{Example 1.4.1:} Find
+	$$\lim_{x \to 5}{(2x^2 - 3x + 4)}$$
+	\textbf{Solution:}
+	\begin{align*}
+		\lim_{x \to 5}{(2x^2 - 3x + 4)} &= \lim_{x \to 5}{2x^2} - \lim_{x \to 5}{3x} + \lim_{x \to 5}{4} \tag{Thrm 1.4.1, 1.4.4} \\
+		           &= 2\lim_{x \to 5}{x^2} - 3\lim_{x \to 5}{x} + \lim_{x \to 5}{4} \tag{Thrm 1.4.3} \\
+		           &= 2(5^2) - 3(5) + (4) \tag{Thrm 1.3.2, 1.3.3, 1.4.6} \\
+		           &= 39
+	\end{align*}
+	\textbf{Remark:} The limit laws allow us to find the limit of many functions much faster than if we were to always directly use the definition of a limit.
+\end{document}

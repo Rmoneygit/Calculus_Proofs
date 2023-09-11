@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{gensymb}
+
+\begin{document}
+	\textbf{Theorem 1.4.13:} Let $f$ and $g$ be real-valued functions. Let $a$ be a real number. Suppose that $f(x) \leq g(x)$ for all $x$ in a open interval that contains $a$ (except possibly at $a$) and
+	$$\lim_{x \to a}{f(x)} = L \; \text{ and } \; \lim_{x \to a}{g(x)} = M.$$
+	Then $L \leq M$. \\\\
+	\textbf{Proof:}
+	 We will proceed by contradiction. Suppose, on the contrary, that 
+	 $$L > M.$$
+	 By Theorem 1.4.4,
+	 \begin{align*}
+	 	\lim_{x \to a}{\left[g(x) - f(x)\right]} &= M - L
+	 \end{align*}
+	 This means that for all real numbers $\epsilon > 0$, there exists a real number $\delta > 0$ such that
+	 $$0 < |x - a| < \delta \implies |g(x) - f(x) - (M - L)| < \epsilon.$$
+	 By assumption $L > M$, so $L - M \neq 0$. Therefore we can take $\epsilon = L - M$ in particular, and note that there exists a real number $\delta_1$ such that
+	 $$0 < |x - a| < \delta_1 \implies |g(x) - f(x) - (M - L)| < L - M.$$
+	 By Absolute Value Inequality 1, $a \leq |a|$ for all $a \in \mathbb{R}$, so taking $a = g(x) - f(x) - (M - L)$, we obtain
+	 $$g(x) - f(x) - (M - L) \leq |g(x) - f(x) - (M - L)|.$$
+	 Thus by transitivity
+	 \begin{align*}
+	 	g(x) - f(x) - (M - L) &<  L - M \\
+	 	g(x) - f(x) - M + L &< L - M \\
+	 	g(x) - f(x) &< 0 \\
+	 	g(x) &< f(x).
+	 \end{align*}
+	 So there exists a real number $\delta_1$ such that
+	 $$0 < |x - a| < \delta_1 \implies g(x) < f(x).$$
+	 But this contradicts the hypothesis that $f(x) \leq g(x)$ for all $x$ on the interval. Therefore, our assumption that $L > M$ must be false. Therefore,
+	 $$L \leq M$$
+	 which is what we wanted to show.
+\end{document}

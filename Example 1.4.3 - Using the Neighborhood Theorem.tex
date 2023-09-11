@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{gensymb}
+
+\begin{document}
+	\textbf{Example 1.4.3:} Find
+	$$\lim_{x \to 1}{\frac{x^2 - 1}{x - 1}}$$
+	\textbf{Solution:} Let $f(x) = \frac{x^2 - 1}{x - 1}$. Notice that we can't find the limit by substituting $x = 1$ because $f(1)$ isn't defined. Nor can we apply the Quotient Law, because the limit of the denominator is $0$. \\\\
+	Note that
+	\begin{align*}
+		f(x) &= \frac{x^2 - 1}{x - 1} \\
+		     &= \frac{(x + 1)(x - 1)}{x - 1}
+	\end{align*}
+	Let $g(x) = x + 1$. Notice that for all $x \neq 1$, $f(x) = g(x)$. Therefore, we can apply the Neighborhood Theorem and say that
+	\begin{align*}
+		\lim_{x \to 1}{\frac{(x + 1)(x - 1)}{x - 1}} &= \lim_{x \to 1}{x + 1} \\
+		                                      &= (1) + 1 \tag{Thrm 1.4.8}\\
+		                                      &= 2
+	\end{align*}
+	\textbf{Remark:} In many presentations of Calculus, the Neighborhood Theorem is not stated explicitly (nor does it have a standard name). Instead, the author will present an example similar to the one above, and justify this step
+	$$\lim_{x \to 1}{\frac{(x + 1)(x - 1)}{x - 1}} = \lim_{x \to 1}{x + 1}$$
+	by saying we can cancel the $(x-1)$ because $x \neq 1$ since it is merely *approaching* $1$, so $(x - 1) \neq 0$. This is very intuitively reasonable, but the Neighborhood Theorem gives us complete certainty that this is legitimate.
+\end{document}

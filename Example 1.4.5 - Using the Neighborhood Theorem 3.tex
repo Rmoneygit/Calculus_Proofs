@@ -1,0 +1,17 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{gensymb}
+
+\begin{document}
+	\textbf{Example 1.4.5:} Find 
+	$$\lim_{h \to 0}{\frac{(3 + h)^2 - 9}{h}}$$
+	\textbf{Solution:} This is another rational function to which we cannot immediately apply the Direct Substitution Property, because the function is undefined at $h = 0$, nor can we use the Quotient Rule since the limit of the denominator is $0$. Instead we have to do some preliminary algebra:
+	\begin{align*}
+		\lim_{h \to 0}{\frac{(3 + h)^2 - 9}{h}} &= \lim_{h \to 0}{\frac{(9 + 6h + h^2) - 9}{h}} \\
+		 &= \lim_{h \to 0}{\frac{6h + h^2}{h}} \\
+		 &= \lim_{h \to 0}{6 + h} \tag{Theorem 1.4.12} \\
+		 &= 6 + (0) \tag{Theorem 1.4.8} \\
+		 &= 6
+	\end{align*}
+\end{document}

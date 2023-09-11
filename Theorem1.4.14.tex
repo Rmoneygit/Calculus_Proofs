@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{gensymb}
+
+\begin{document}
+	\textbf{Theorem 1.4.14:} Let $f$, $g$ and $h$ be real valued functions. Suppose that $f(x) \leq g(x) \leq h(x)$ for all $x$ in an open interval that contains $a$ (except possibly at $a$), and
+	$$\lim_{x \to a}{f(x)} = \lim_{x \to a}{h(x)} = L.$$
+	Then
+	$$\lim_{x \to a}{g(x)} = L.$$
+	\textbf{Proof:}
+	Let $\epsilon > 0$ be an arbitrary real number. We need to show that there exists a real number $\delta > 0$ such that
+	$$0 < |x - a| < \delta \implies |g(x) - L| < \epsilon.$$
+	\textit{Step 1: Find a $\delta$} \\
+	Since $\lim_{x \to a}{f(x)} = L$, then there exists a real number $\delta_1 > 0$ such that
+	$$0 < |x - a| < \delta_1 \implies |f(x) - L| < \epsilon$$
+	By Absolute Value Inequality Lemma 2, $|f(x) - L| < \epsilon$ implies that
+	\begin{align*}
+		-\epsilon &< f(x) - L < \epsilon \\
+		L -\epsilon &< f(x) < L + \epsilon
+	\end{align*}
+	So the implication can be rewritten as
+	$$0 < |x - a| < \delta_1 \implies L -\epsilon < f(x) < L + \epsilon$$
+	Since $\lim_{x \to a}{h(x)} = L$, then there exists a real number $\delta_2 > 0$ such that
+	$$0 < |x - a| < \delta_2 \implies |h(x) - L| < \epsilon$$
+	which, by the same argument as above, can be rewritten as
+	$$0 < |x - a| < \delta_2 \implies L -\epsilon < h(x) < L + \epsilon$$
+	Let us choose $\delta = \min{(\delta_1, \delta_2)}$ \\\\
+	\textit{Step 2: Verify $\delta$ satisfies the condition} \\
+	Suppose that $0 < |x - a| < \delta$. This implies that
+	$$0 < |x - a| < \delta_1 \; \text{ and } \; 0 < |x - a| < \delta_2.$$
+	This implies that
+	\begin{align*}
+		L -\epsilon &< f(x) \leq g(x) \leq h(x) < L + \epsilon \\
+		L -\epsilon &< g(x) < L + \epsilon \\
+		-\epsilon &< g(x) - L < \epsilon
+	\end{align*}
+	By Absolute Value Inequality Lemma 2, this implies
+	$$|g(x) - L| < \epsilon$$
+	which is what we needed to show. Thus,
+	$$\lim_{x \to a}{g(x)} = L.$$
+\end{document}

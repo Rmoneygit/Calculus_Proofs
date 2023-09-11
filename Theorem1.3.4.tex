@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{gensymb}
+
+\begin{document}
+	\textbf{Theorem 1.3.4:} Let $a, b, c \in \mathbb{R}$ such that $a < b < c$. Let $f$ be a real-valued function given by the rule
+	$$f(x) = \begin{cases}
+		g(x) & \text{if } x \geq b \\
+		h(x) & \text{if } x < b
+	\end{cases}$$ 
+	Where $h, g$ are arbitrary real-valued functions defined on those intervals. Then, if the limits exist,
+	\begin{align*}
+		\lim_{x \to a}{f(x)} &= \lim_{x \to a}{h(x)} \tag{1}\\
+		\lim_{x \to c}{f(x)} &= \lim_{x \to c}{g(x)} \tag{2}\\
+		\lim_{x \to b}{f(x)} = &\lim_{x \to b^{+}}{g(x)} = \lim_{x \to b^{-}}{h(x)} \tag{3}
+	\end{align*}
+	\\\\
+	\textbf{Proof:} \\\\
+	(1) Suppose that $\lim_{x \to a}{f(x)} = L$. We need to show $\lim_{x \to a}{h(x)} = L$. To show this, we need to show that for all real numbers $\epsilon > 0$, there exists a real number $\delta > 0$ such that
+	$$0 < |x - a| < \delta \implies |h(x) - L| < \epsilon.$$
+	\textit{Step 1: Find a $\delta$} \\
+	Since $\lim_{x \to a}{f(x)} = L$, then for all real numbers $\epsilon > 0$ there exists a real number $\delta_1 > 0$ such that
+	$$0 < |x - a| < \delta_1 \implies |f(x) - L| < \epsilon.$$
+	We want it to be the case that $x < b$, so that $f(x) = h(x)$. With this in mind, note that
+	\begin{align*}
+		0 < |x - a| < b - a \\
+		-(b - a) < x - a < b - a \tag{Abs. Val Ineq. 2}\\
+		2a - b < x < b \\
+		x < b
+	\end{align*}
+	Also note that, since by assumption $a < b$, then
+	$$b - a > 0.$$
+	This suggests we should choose $\delta = \min{(\delta_1, b - a)}$ \\\\
+	\textit{Step 2: Verify $\delta$ satisfies the condition} \\
+	Suppose that $0 < |x - a| < \delta$. This implies
+	$$0 < |x - a| < \delta_1 \; \text{ and } \; 0 < |x - a| < b - a$$
+	These imply that
+	$$|f(x) - L| < \epsilon \; \text{ and } \; x < b$$
+	Since $x < b$, then $f(x) = h(x)$. Therefore
+	$$|h(x) - L| < \epsilon$$
+	which is what we wanted to show. Thus
+	$$\lim_{x \to a}{f(x)} = L = \lim_{x \to a}{h(x)}$$ \\\\
+	
+	(2) Suppose that $\lim_{x \to c}{f(x)} = L$. We need to show $\lim_{x \to c}{g(x)} = L$. To show this, we need to show that for all real numbers $\epsilon > 0$, there exists a real number $\delta > 0$ such that
+	$$0 < |x - c| < \delta \implies |g(x) - L| < \epsilon.$$
+	\textit{Step 1: Find a $\delta$} \\
+	Since $\lim_{x \to c}{f(x)} = L$, then for all real numbers $\epsilon > 0$ there exists a real number $\delta_1 > 0$ such that
+	$$0 < |x - c| < \delta_1 \implies |f(x) - L| < \epsilon.$$
+	We want it to be the case that $x \geq b$, so that $f(x) = g(x)$. With this in mind, note that
+	\begin{align*}
+		0 < |x - c| < c - b \\
+		-(c - b) < x - c < c - b \tag{Abs. Val Ineq. 2}\\
+		b < x < 2c -b \\
+		b \leq x
+	\end{align*}
+	Also note that, since by assumption $b < c$, then
+	$$c - b > 0.$$
+	This suggests we should choose $\delta = \min{(\delta_1, c - b)}$ \\\\
+	\textit{Step 2: Verify $\delta$ satisfies the condition} \\
+	Suppose that $0 < |x - a| < \delta$. This implies
+	$$0 < |x - a| < \delta_1 \; \text{ and } \; 0 < |x - a| < c - b$$
+	These imply that
+	$$|f(x) - L| < \epsilon \; \text{ and } \; x \geq b$$
+	Since $x \geq b$, then $f(x) = g(x)$. Therefore
+	$$|g(x) - L| < \epsilon$$
+	which is what we wanted to show. Thus
+	$$\lim_{x \to c}{f(x)} = L = \lim_{x \to c}{g(x)}$$
+\end{document}

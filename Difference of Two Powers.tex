@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amssymb, bm}
+\usepackage{gensymb}
+
+\begin{document}
+	\textbf{Difference of Two Powers:} Let $n \in \mathbb{N}$ such that $n \geq 2$. Then for all $a, b \in \mathbb{R}$:
+	\begin{align*}
+		a^n - b^n &= (a - b)(a^{n-1} + a^{n-2}b + a^{n-3}b^2 + \ldots + ab^{n-2} + b^{n-1}) \\
+		          &= (a - b)\sum_{j=0}^{n-1}{a^{n-j-1}b^j}
+	\end{align*}
+	\textbf{Proof:} We will proceed by complete induction. \\\\
+	Basis Step: Let $n = 2$. Then
+	\begin{align*}
+		a^n - b^n &= a^2 - b^2 \\
+		          &= a^2 -ab + ab - b^2 \tag{Adding 0}\\
+		          &= a(a - b) + b(a - b) \tag{Factor out a and b}\\
+		          &= (a - b)(a + b) \tag{Factor out a - b} \\
+		          &= (a - b)(a^1 + b^1) \\
+		          &= (a - b)(a^{2-1} + b^{2-1}) \\
+		          &= (a - b)(a^{n-1} + b^{n-1})
+	\end{align*}
+	So the statement holds in the base case. \\\\
+	Induction Step: Suppose that the statement holds for all natural numbers $r$ such that $1 \leq r \leq k$. This means that for all such $r$,
+	$$a^r - a^r = (a - b)\sum_{j=0}^{r-1}{a^{r-j-1}b^j}$$
+	We then need to show that it holds for $k + 1$. This means we need to show that
+	\begin{align*}
+		a^{k+1} - b^{k+1} &= (a-b)\sum_{j=0}^{(k + 1) -1}{a^{(k+1)-j-1}b^{j}} \\
+		                  &= (a-b)\sum_{j=0}^{k}{a^{k-j}b^{j}}
+	\end{align*}
+	We have
+	\begin{align*}
+		a^{k+1} - b^{k+1} &= a^{k+1} - b^{k+1} + (-ab^k + ab^k) + (ba^k - ba^k) \tag{Adding 0} \\
+		                  &= a^{k+1} - ab^k + ba^k - b^{k+1} - ba^k + ab^k \tag{Rearrange terms} \\
+		                  &= a(a^k - b^k) + b(a^k - b^k) - ab(a^{k-1} - b^{k-1}) \tag{Factor} \\
+		                  &= (a + b)(a^k - b^k) - ab(a^{k-1} - b^{k-1}) \tag{Factor} \\
+		                  &= (a + b)(a-b)\sum_{j=0}^{k-1}{a^{k-j-1}b^j} - ab(a-b)\sum_{j=0}^{k-2}{a^{k-j-2}b^j} \tag{Induction Hyp.} \\
+		                  &= (a-b)\left((a + b)\sum_{j=0}^{k-1}{a^{k-j-1}b^j} - ab\sum_{j=0}^{k-2}{a^{k-j-2}b^j}\right) \tag{Factor out a - b} \\
+		                  &= (a-b)\left(a\sum_{j=0}^{k-1}{a^{k-j-1}b^j} + b\sum_{j=0}^{k-1}{a^{k-j-1}b^j} - ab\sum_{j=0}^{k-2}{a^{k-j-2}b^j}\right) \tag{Distribute left sum} \\
+		                  &= (a-b)\left(\sum_{j=0}^{k-1}{a^{k-j}b^j} + \sum_{j=0}^{k-1}{a^{k-j-1}b^{j+1}} - \sum_{j=0}^{k-2}{a^{k-j-1}b^{j+1}}\right) \tag{Multiply into sums} \\
+		                  &= (a-b)\left(\sum_{j=0}^{k-1}{a^{k-j}b^j} +
+		                   \sum_{j=k-1}^{k-1}{a^{k-j-1}b^{j+1}} +
+		                   \sum_{j=0}^{k-2}{a^{k-j-1}b^{j+1}} - \sum_{j=0}^{k-2}{a^{k-j-1}b^{j+1}}\right) \tag{Expand middle sum} \\
+		                  &= (a-b)\left(\sum_{j=0}^{k-1}{a^{k-j}b^j} +
+		                  \sum_{j=k-1}^{k-1}{a^{k-j-1}b^{j+1}}\right) \tag{Right sums cancel} \\
+		                  &= (a-b)\left(\sum_{j=0}^{k-1}{a^{k-j}b^j} + a^{k-(k-1)-1}b^{(k-1)+1}
+		                  \right) \tag{Convert to normal notation} \\
+		                  &= (a-b)\left(\sum_{j=0}^{k-1}{a^{k-j}b^j} + a^{0}b^{k}
+		                  \right) \\
+		                  &= (a-b)(a^k + a^{k-1}b + a^{k-2}b^2 + \ldots + a^2b^{k-2} + ab^{k-1} + b^{k}) \tag{Convert to normal notation} \\
+		                  &= (a-b)\sum_{j=0}^{k}{a^{k-j}b^{j}} \tag{Convert to sigma notation}
+	\end{align*}
+	which is what we needed to show. So the implication of the induction step holds. \\\\
+	We have proven the base case and the induction step. Therefore, for all $n \geq 2$,
+		\begin{align*}
+			&= (a - b)\sum_{j=0}^{n-1}{a^{n-j-1}b^j}
+		\end{align*}
+\end{document}
