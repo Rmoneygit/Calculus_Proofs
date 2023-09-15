@@ -16,24 +16,24 @@
 									 &= 2\left|\sin{\left(\frac{\theta - c}{2}\right)}\right|\left|\cos{\left(\frac{\theta + c}{2}\right)} \right|
 	\end{align*}
 	The range of $\cos{(x)}$ is $[-1, 1]$, so for all real numbers $|\cos{(x)}| \leq 1$. Therefore
-	$$\left|\cos{\left(\frac{\theta + c}{2}\right)} \right| \leq 1$$
-	so
+	$$\left|\cos{\left(\frac{\theta + c}{2}\right)} \right| \leq 1.$$
+	Multiply both sides of this inequality by $2\left|\sin{\left(\frac{\theta - c}{2}\right)}\right|$, which is nonnegative, to obtain
 	\begin{align*}
 		2\left|\sin{\left(\frac{\theta - c}{2}\right)}\right|\left|\cos{\left(\frac{\theta + c}{2}\right)} \right| &\leq 2\left|\sin{\left(\frac{\theta - c}{2}\right)}\right| \\
 		|\sin{(\theta)} - \sin{(c)}| &\leq 2\left|\sin{\left(\frac{\theta - c}{2}\right)}\right|
 	\end{align*}
-	By Trig. Inequality 3,
+	By Trig. Inequality 3, $|\sin(x)| \leq |x|$ for all real numbers $x$, so
 	\begin{align*}
 		2\left|\sin{\left(\frac{\theta - c}{2}\right)}\right| \leq 2\left|\frac{\theta - c}{2}\right|
 	\end{align*}
-	so
+	so by transitivity,
 	\begin{align*}
 		|\sin{(\theta)} - \sin{(c)}| &\leq 2\left|\frac{\theta - c}{2}\right| \\
 		|\sin{(\theta)} - \sin{(c)}| &\leq |\theta - c|
 	\end{align*}
 	This suggests we should choose $\delta = \epsilon$. \\\\
-	\textit{Step 2: Verify $\delta$ satisfies the condition}
-	Suppose $0 < |\theta - c| < \delta$. Then
+	\textit{Step 2: Verify $\delta$ satisfies the condition} \\
+	Suppose $0 < |\theta - c| < \delta$. Then, by the result established in Step 1,
 	\begin{align*}
 		|\sin{(\theta)} - \sin{(c)}| &\leq |\theta - c| < \delta = \epsilon \\
 		|\sin{(\theta)} - \sin{(c)}| &< \epsilon
